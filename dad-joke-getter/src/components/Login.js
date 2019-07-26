@@ -10,6 +10,9 @@ const Login = props => {
       .post("http://localhost:3300/api/login", body)
       .then(res => {
         console.log(res.data);
+
+        console.log(res.data.message);
+        localStorage.setItem("user-token", res.data.token);
       })
       .catch(err => {
         console.log(err);
